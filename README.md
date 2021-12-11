@@ -38,3 +38,9 @@ $aggregated_marks = $results['aggregated_marks'];
 //Retrieving detailed subjects from the API.
 $detailed_subjects = $results['detailed_subjects'];
 ```
+
+## Supported Exams
+```
+CSEE (2015,2016,2017,2018,2019,2020)
+ACSEE (2014,2015,2016,2017,2018,2019,2020,2021)
+```
