@@ -1,0 +1,10 @@
+Project : NECTA API
+Version : 1.0 Beta
+Language : PHP (Pure)
+Programmer : Bwire C Mashauri
+Contact : +255 689 938 643
+
+Supported Exams : CSEE (2015,2016,2017,2018,2019,2020)
+		  ACSEE (2014,2015,2016,2017,2018,2019,2020,2021)
+
+API usage is explained in the index.php file
