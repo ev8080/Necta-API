@@ -1,5 +1,5 @@
 # NECTA-API
-A PHP library which can fetch national examinations results (CSEE and ACSEE)
+A PHP API which can fetch national examinations results (CSEE and ACSEE)
 ```
 Project : NECTA API
 Version : 1.0 Beta
