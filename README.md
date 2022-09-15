@@ -46,6 +46,7 @@ ACSEE (2014,2015,2016,2017,2018,2019,2020,2021,2022)
 ```
 
 ## Full Example
+```php
 include_once 'necta_api_class.php';
 $handler = new NectaAPI();
 
