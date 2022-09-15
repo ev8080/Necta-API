@@ -2,26 +2,26 @@
 A PHP API which can fetch national examinations results (CSEE and ACSEE)
 ```
 Project : NECTA API
-Version : 1.0 Beta
 Language : PHP (Pure)
-Programmer : Bwire C Mashauri
+Developer : Bwire C Mashauri
 Contact : +255 689 938 643
 ```
 
 ## Usage
 ```php
-//Include the configuration file for the API on your project.
-require_once('napi/config.php');
+//Load and initialize the class
+require_once ('necta_api_class.php');
+$handler = new NectaAPI();
 
-//Include the main class which perfom all the API functions on your project.
-require_once('napi/necta_class.php');
+//Set your parameters.
+$query = array(
+"index_no"=>"Index Number",
+"exam_year"=>"Exam Type",
+"exam_type"=>"Exam Year"
+);
 
-//Call a function to fetch results from NECTA website.
-//$results = fetch_results("Index Number", "Exam Type", "Exam Year");
-$results = fetch_results("S2332/0009", "CSEE", "2020");
-
-//Retrieving status message from the API.
-$message = $results['message'];
+//Fire the API to fetch results.
+$results = $handler->getResults($query);
 
 //Retrieving school name from the API.
 $school_name = $results['school_name'];
@@ -41,6 +41,25 @@ $detailed_subjects = $results['detailed_subjects'];
 
 ## Supported Exams
 ```
-CSEE (2015,2016,2017,2018,2019,2020)
-ACSEE (2014,2015,2016,2017,2018,2019,2020,2021)
+CSEE (2015,2016,2017,2018,2019,2020,2021)
+ACSEE (2014,2015,2016,2017,2018,2019,2020,2021,2022)
 ```
+
+## Full Example
+<?php
+include_once 'necta_api_class.php';
+$handler = new NectaAPI();
+
+$query = array(
+"index_no"=>"P0104/0503",
+"exam_year"=>"2022",
+"exam_type"=>"ACSEE"
+);
+
+$results = $handler->getResults($query);
+?>
+<h4>SCHOOL / CENTER NAME : <b style="color:green"><?php echo $results['school_name']; ?></b></h4>
+<h4>CANDIDATE GENDER : <b style="color:green"><?php echo $results['candidate_gender']; ?></b></h4>
+<h4>AGGREGATED MARKS : <b style="color:green"><?php echo $results['aggregated_marks']; ?></b></h4>
+<h4>DIVISION : <b style="color:green"><?php echo $results['division']; ?></b></h4>
+<h4>DETAILED SUBJECTS : <b style="color:green"><?php echo $results['detailed_subjects']; ?></b></h4>
