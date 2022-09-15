@@ -46,7 +46,6 @@ ACSEE (2014,2015,2016,2017,2018,2019,2020,2021,2022)
 ```
 
 ## Full Example
-<?php
 include_once 'necta_api_class.php';
 $handler = new NectaAPI();
 
@@ -57,7 +56,7 @@ $query = array(
 );
 
 $results = $handler->getResults($query);
-?>
+```html
 <h4>SCHOOL / CENTER NAME : <b style="color:green"><?php echo $results['school_name']; ?></b></h4>
 <h4>CANDIDATE GENDER : <b style="color:green"><?php echo $results['candidate_gender']; ?></b></h4>
 <h4>AGGREGATED MARKS : <b style="color:green"><?php echo $results['aggregated_marks']; ?></b></h4>
